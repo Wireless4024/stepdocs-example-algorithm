@@ -1,5 +1,13 @@
 function quicksort(arr: number[]) {
-	// TODO: Implement quicksort here
+	_quicksort(arr, 0, arr.length - 1)
+}
+
+function _quicksort(arr: number[], low: number, high: number) {
+	if (low < high) {
+		const pi = partition(arr, low, high)
+		_quicksort(arr, low, pi - 1)
+		_quicksort(arr, pi + 1, high)
+	}
 }
 
 function swap(arr: number[], i: number, j: number) {
